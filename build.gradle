@@ -1,0 +1,25 @@
+plugins {
+    // Apply the Java plugin to add support for Java.
+    id 'java'
+}
+
+// Set the source compatibility
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+// Define repositories to use
+repositories {
+    mavenCentral()
+}
+
+// Define dependencies
+dependencies {
+    // Example dependency: JUnit for testing
+    testImplementation 'junit:junit:4.13.2'
+}
+
+// Define a custom task to run the application
+task runApp(type: JavaExec) {
+    main = 'com.example.App'
+    classpath = sourceSets.main.runtimeClasspath
+}
